@@ -1,0 +1,8 @@
+app_default:
+   resource: "@AppBundle/Resources/config/routing/default.yml"
+   prefix:   /
+    
+app_post:
+    resource: "@AppBundle/Resources/config/routing/post.yml"
+    prefix:   /post
+
