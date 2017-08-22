@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <div class="topMenu">
+                    Sf_study project
+                    <a href="{{path('home_index')}}" class="switch">back to homepage</a>
+                </div>
+                <hr/>
+            </div>
+
+            <div id="content">
+
+                <a href="{{path('adminPanel_addnew')}}">
+                    <input class="addPost"  type="submit" value="+ Add new article"/>
+                </a>
+                    
+                <div class="leftPanel">
+                    {% for post in posts %}
+                        <article class="post">
+                            <p>{{ post.title }}
+                                <a href="{{path('adminPanel_edit', {id: post.id})}}">
+                                    <input class="controlBtn" type="submit" value="Edit"/>
+                                </a>
+                                <a href="{{path('adminPanel_delete', {id: post.id})}}">
+                                    <input class="controlBtn" type="submit" value="Delete"/>
+                                </a>
+                            </p>
+                        </article>
+                    {% else %}
+                        <h2>No article found</h2>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

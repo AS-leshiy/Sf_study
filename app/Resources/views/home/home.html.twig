@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <div class="topMenu">
+                    Sf_study project
+                    <a href="{{path("adminPanel_index")}}" class="switch">admin panel</a>
+                </div>
+                <hr/>
+            </div>
+
+            <div id="content">
+                {% for post in posts %}
+                    <article class="post">
+                        <h2>
+                            <a href="{{ path('home_article', {slug: post.id}) }}">
+                                {{ post.title() }}
+                            </a>
+                        </h2>
+                        {{ post.description }}
+                    </article><br/>
+                {% else %}
+                    <h2>No article found</h2>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

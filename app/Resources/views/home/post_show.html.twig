@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <div class="topMenu">
+                    Sf_study project
+                    <a href="{{path("adminPanel_index")}}" class="switch">admin panel</a>
+                </div>
+                <hr/>
+            </div>
+
+            <div id="content">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.article }}</p>
+                <a href="{{path("home_index")}}">back to homepage</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,8 +1,7 @@
-app_default:
-   resource: "@AppBundle/Resources/config/routing/default.yml"
+app_home:
+   resource: "@AppBundle/Resources/config/routing/home.yml"
    prefix:   /
-    
-app_post:
-    resource: "@AppBundle/Resources/config/routing/post.yml"
-    prefix:   /post
 
+app_admin:
+   resource: "@AppBundle/Resources/config/routing/admin.yml"
+   prefix:   /admin

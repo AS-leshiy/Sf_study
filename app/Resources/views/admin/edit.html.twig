@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <div class="topMenu">
+                    Sf_study project
+                    <a href="{{path('home_index')}}" class="switch">back to homepage</a>
+                </div>
+                <hr/>
+            </div>
+
+            <div id="content">
+                
+                <a href="{{path('adminPanel_index')}}">
+                    <input class="addPost"  type="submit" value="Back to list"/>
+                </a>
+                
+                <div class="addPanel">
+                    <h2>Edit mode</h2>
+                    
+                    {{ form_start(form) }}
+                        {{ form_row(form.title) }}
+                        {{ form_row(form.description) }}
+                        {{ form_row(form.article) }}
+
+                        <a href="{{path('adminPanel_edit',{id: post.id})}}">
+                            <button type="submit" class="controlBtn"> Save </button>
+                        </a>
+
+                    {{ form_end(form) }}
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

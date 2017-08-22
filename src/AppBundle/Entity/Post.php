@@ -24,23 +24,23 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="fullName", type="string", length=50)
+     * @ORM\Column(name="title", type="string", length=50)
      */
-    private $fullName;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="age", type="integer")
-     */
-    private $age;
+    private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="skills", type="text")
+     * @ORM\Column(name="description", type="text")
      */
-    private $skills;
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="article", type="text")
+     */
+    private $article;
 
 
     /**
@@ -54,75 +54,75 @@ class Post
     }
 
     /**
-     * Set fullName
+     * Set title
      *
-     * @param string $fullName
+     * @param string $title
      *
      * @return Post
      */
-    public function setFullName($fullName)
+    public function setTitle($title)
     {
-        $this->fullName = $fullName;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get fullName
+     * Get title
      *
      * @return string
      */
-    public function getFullName()
+    public function getTitle()
     {
-        return $this->fullName;
+        return $this->title;
     }
 
     /**
-     * Set age
+     * Set description
      *
-     * @param integer $age
+     * @param string $description
      *
      * @return Post
      */
-    public function setAge($age)
+    public function setDescription($description)
     {
-        $this->age = $age;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get age
-     *
-     * @return int
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
-
-    /**
-     * Set skills
-     *
-     * @param string $skills
-     *
-     * @return Post
-     */
-    public function setSkills($skills)
-    {
-        $this->skills = $skills;
-
-        return $this;
-    }
-
-    /**
-     * Get skills
+     * Get description
      *
      * @return string
      */
-    public function getSkills()
+    public function getDescription()
     {
-        return $this->skills;
+        return $this->description;
+    }
+
+    /**
+     * Set article
+     *
+     * @param string $article
+     *
+     * @return Post
+     */
+    public function setArticle($article)
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return string
+     */
+    public function getArticle()
+    {
+        return $this->article;
     }
 }
 
