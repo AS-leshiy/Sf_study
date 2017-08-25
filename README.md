@@ -27,7 +27,11 @@ First instal (for windows)
 11. cd C:\xampp\htdocs\site.loc\www\Sf_study
 12. php bin\console doctrine:database:create
 13. php bin\console doctrine:schema:create
-14. restart Apache
-15. go to cmder and write:
-16. php bin\console server:run
-17. open http://127.0.0.1:8000 in your browser
+14. php bin\console doctrine:fixtures:load
+15. php bin\console cache:clear --no-warmup
+16. go to Xampp control panel and restart Apache
+17. go to cmder and write:
+18. php bin\console server:run
+19. open http://127.0.0.1:8000 in your browser
+
+20. Admin panel: login: admin  ||  password: adminpass
