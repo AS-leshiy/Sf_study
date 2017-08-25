@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <div class="topMenu">
+                    Sf_study project
+                    <a href="{{path('home_index')}}" class="switch">homepage</a>
+                </div>
+                <hr/>
+            </div>
+
+            <div id="content">
+                
+                {% if error %}
+                    <div class="">
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+                {% endif %}
+                
+                <div class="addPanel">
+                    <h2>Authorization</h2>
+                    <form action="{{ path('security_login') }}" method="post">
+                        <label for="username">Login:</label>
+                            <input type="text" id="username" name="_username"/>
+                        <label for="password">Password:</label>
+                            <input type="password" id="password" name="_password"/>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                            <button type="submit" class="controlBtn">LogIn</button>
+                </form>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

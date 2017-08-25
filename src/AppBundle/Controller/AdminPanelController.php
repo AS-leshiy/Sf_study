@@ -7,11 +7,13 @@ use AppBundle\Form\PostType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  *
  * @Route("/admin")
+ * @Security("has_role('ROLE_ADMIN')")
  *
  */
 
@@ -54,6 +56,7 @@ class AdminPanelController extends Controller
     
     /**
      * @Route("/{id}/delete", requirements={"id": "\d+"}, name="adminPanel_delete")
+     * @Security("is_granted('delete', post)")
      * @Method("GET")
      */
     public function deleteAction(Post $post)

@@ -6,7 +6,12 @@
             <div id="welcome">
                 <div class="topMenu">
                     Sf_study project
-                    <a href="{{path("adminPanel_index")}}" class="switch">admin panel</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{path("security_logout")}}" class="switch">logOut</a>
+                        <a href="{{path("adminPanel_index")}}" class="switch">admin panel</a>
+                        {% else %}
+                        <a href="{{path("security_login")}}" class="switch">logIn</a>
+                    {% endif %}
                 </div>
                 <hr/>
             </div>

@@ -29,7 +29,10 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
-    # add more services, or override services that need manual wiring
-    # AppBundle\Service\ExampleService:
-    #     arguments:
-    #         $someArgument: 'some_value'
+    Twig\Extensions\IntlExtension: ~
+
+    # the slugger service needs a public alias for getting it from
+    # the container when loading doctrine fixtures
+    slugger:
+        alias: AppBundle\Utils\Slugger
+        public: true
